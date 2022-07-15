@@ -18,8 +18,8 @@ app.secret_key="Develoteca"
 #proceso para la conexion con la base de datos
 mysql=MySQL()
 app.config['MYSQL_DATABASE_HOST']='localhost'
-app.config['MYSQL_DATABASE_USER']='root'
-app.config['MYSQL_DATABASE_PASSWORD']=''
+app.config['MYSQL_DATABASE_USER']='supervisores'
+app.config['MYSQL_DATABASE_PASSWORD']='maral'
 app.config['MYSQL_DATABASE_DB']='bdb1'
 mysql.init_app(app)
 
