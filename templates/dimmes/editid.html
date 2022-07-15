@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+{% for dimmes in info_dimmes %}
+  
+<form method="post" action="/updateid" enctype="multipart/form-data">
+    <div class="card">
+            <h1>EDITAR DATOS</h1>
+        
+        <label for="txtCuadrillaD">Cuadrilla:</label>
+        <input id="txtCuadrillaD" value="{{dimmes[1]}}" class="form-control" type="text" name="txtCuadrillaD">
+        
+        <label for="txtEtiqueta">Etiqueta:</label>
+        <input id="txtEtiqueta" value="{{dimmes[2]}}" class="form-control" type="text" name="txtEtiqueta">
+        
+        <label for="txtNumeroDi">Numero:</label>
+        <input id="txtNumeroDi" value="{{dimmes[3]}}" class="form-control" type="text" name="txtNumeroDi">
+        
+        <label for="txtImei1">IMEI 1:</label>
+        <input id="txtImei1" value="{{dimmes[4]}}" class="form-control" type="text" name="txtImei1">
+        
+        <label for="txtImei2">IMEI 2:</label>
+        <input id="txtImei2" value="{{dimmes[5]}}" class="form-control" type="text" name="txtImei2">
+        
+        <label for="txtModelo">Modelo:</label>
+        <input id="txtModelo" value="{{dimmes[6]}}" class="form-control" type="text" name="txtModelo">
+        
+        <label for="txtSerie">Serie:</label>
+        <input id="txtSerie" value="{{dimmes[7]}}" class="form-control" type="text" name="txtSerie">
+        
+        <label for="txtNombreD">Nombre:</label>
+        <input id="txtNombreD" value="{{dimmes[8]}}" class="form-control" type="text" name="txtNombreD">
+        
+        <label for="txtImeiS">Imei SIM:</label>
+        <input id="txtImeiS" value="{{dimmes[9]}}" class="form-control" type="text" name="txtImeiS">
+        
+        <label for="txtObservaciones">Observaciones:</label>
+        <input id="txtObservaciones" value="{{dimmes[10]}}" class="form-control" type="text" name="txtObservaciones">
+        
+        <label for="txtPantalla">Pantalla:</label>
+        <input id="txtPantalla" value="{{dimmes[11]}}" class="form-control" type="text" name="txtPantalla">
+        
+        <label for="txtFallas">Fallas:</label>
+        <input id="txtFallas" value="{{dimmes[12]}}" class="form-control" type="text" name="txtFallas">
+        
+        <label for="txtCompletas">Completas:</label>
+        <input id="txtCompletas" value="{{dimmes[13]}}" class="form-control" type="text" name="txtCompletas">
+        
+        <input type="hidden" value="{{dimmes[0]}}" name="txtIDd" id="txtIDd">
+
+        <div class="padre">
+            <input type="submit" class="btn btn-green" value="Actualizar">
+            <a href="{{url_for('indexid')}}"><input type="submit" class="btn btn-blue" value="Regresar"></a>
+        </div>
+    </div>
+    
+</form>
+
+{% endfor %}
+{% include 'footer.html' %}

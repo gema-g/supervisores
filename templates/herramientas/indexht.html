@@ -1,0 +1,77 @@
+{% include 'header.html' %}
+<form  method="POST" action="{{url_for('downloaddd1_reportddd1')}}">
+ <div >
+  <div >
+    <span  >Seleccione un numero de tecnico</span>
+     <select name="sid" >
+        {% for tecnicos in info_tecnicos %}
+        <tr>
+        <td>{{tecnicos[4]}}</td>
+        <option value = "{{tecnicos[4]}}" SELECT>{{tecnicos[4]}}</option>
+        </tr>
+        {% endfor  %}
+        </select>
+       </div>
+       <button type="submit" class="fcc-btn2">Imprimir Reporte</button>
+</div>
+</form>
+
+
+<br/>
+<a class="fcc-btn" href="{{url_for('createht')}}">
+
+    Ingresar datos
+
+</a> 
+<br>
+<br>
+
+<div style="overflow-x:auto;">
+    <table align="center">
+        <tr id="empleados">
+            <th>ID</th>
+            <th>Herramienta</th>
+            <th>Numero Empleado</th>
+            <th>En.</th>
+            <th>Febr.</th>
+            <th>Mzo.</th>
+            <th>Abr.</th>
+            <th>My.</th>
+            <th>Jun.</th>
+            <th>Jul.</th>
+            <th>Agt.</th>
+            <th>Sept.</th>
+            <th>Oct.</th>
+            <th>Nov.</th>
+            <th>Dic.</th>
+            <th>Acciones</th>
+        </tr>
+        {% for herramientas in herramientas_tecnicos %}
+        <tr>
+            <td>{{herramientas[0]}}</td>
+            <td>{{herramientas[1]}}</td>
+            <td>{{herramientas[2]}}</td>
+            <td>{{herramientas[3]}}</td>
+            <td>{{herramientas[4]}}</td>
+            <td>{{herramientas[5]}}</td>
+            <td>{{herramientas[6]}}</td>
+            <td>{{herramientas[7]}}</td>
+            <td>{{herramientas[8]}}</td>
+            <td>{{herramientas[9]}}</td>
+            <td>{{herramientas[10]}}</td>
+            <td>{{herramientas[11]}}</td>
+            <td>{{herramientas[12]}}</td>
+            <td>{{herramientas[13]}}</td>
+            <td>{{herramientas[14]}}</td>
+            <td>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a
+                        href="/editht/{{herramientas[0]}}" class="fa fa-pencil-square-o"></a></button>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a
+                        href="/destroyht/{{herramientas[0]}}" class="fa fa-trash"></a> </button>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a
+                        href="/datosh/{{herramientas[0]}}" class="fa fa-eye"></a></button>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+    {% include 'footer.html' %}

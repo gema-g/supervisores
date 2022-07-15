@@ -1,0 +1,81 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %}
+
+{% if messages %}
+<div class="error">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endwith %}
+
+<br>
+<form method="post" action="/store" enctype="multipart/form-data">
+
+    <div class="card">
+            <h1> DATOS </h1>
+            <h2>DEL EMPLEADO</h2>
+
+        <label for="txtCuadrilla">Cuadrilla:</label>
+        <input id="txtCuadrilla" class="form-control" type="text" name="txtCuadrilla">
+        <br>
+        <label for="txtFoto">Fotografia:</label>
+        <input id="txtFoto" class="form-control" type="file" name="txtFoto">
+        <br>
+        <br>
+        <label for="txtNombre">Nombre:</label>
+        <input id="txtNombre" class="form-control" type="text" name="txtNombre">
+
+        <label for="txtNumeroE">Numero de Empleado:</label>
+        <input id="txtNumeroE" class="form-control" type="text" name="txtNumeroE">
+
+        <label for="txtNumeroC">Numero de Celular:</label>            
+        <input id="txtNumeroC" class="form-control" type="text" name="txtNumeroC">
+
+        <label for="txtUnidad">Unidad:</label>
+        <input id="txtUnidad" class="form-control" type="text" name="txtUnidad">
+        
+        <label for="txtSupervisor">Supervisor:</label>
+        <input id="txtSupervisor" class="form-control" type="text" name="txtSupervisor">
+
+        <label for="txtNumeroD">Numero Dimme:</label>
+        <input id="txtNumeroD" class="form-control" type="text" name="txtNumeroD">
+            
+        <label for="txtCurp">CURP:</label>
+        <input id="txtCurp" class="form-control" type="text" name="txtCurp">
+
+        <label for="txtRfc">RFC:</label>            
+        <input id="txtRfc" class="form-control" type="text" name="txtRfc">
+            
+        <label for="txtSucursal">Sucursal:</label>
+        <input id="txtSucursal" class="form-control" type="text" name="txtSucursal">
+
+        <label for="txtDireccion">Dirección:</label>
+        <input id="txtDireccion" class="form-control" type="text" name="txtDireccion">
+        
+        <label for="txtCorreoE">Correo Electronico:</label>
+        <input id="txtCorreoE" class="form-control" type="text" name="txtCorreoE">
+
+        <label for="txtEstadoC">Estado Civil:</label>
+        <input id="txtEstadoC" class="form-control" type="text" name="txtEstadoC">
+
+        <label for="txtNombreE">Nombre de emergencia:</label>
+        <input id="txtNombreE" class="form-control" type="text" name="txtNombreE">
+
+        <label for="txtNumeroEm">Numero de Emergencia:</label>
+        <input id="txtNumeroEm" class="form-control" type="text" name="txtNumeroEm">
+
+        <label for="txtNumeroL">Numero de Licencia:</label>
+        <input id="txtNumeroL" class="form-control" type="text" name="txtNumeroL">
+
+        <label for="txtVigencia">Vigencia:</label>
+        <input id="txtVigencia" class="form-control" type="text" name="txtVigencia">
+
+        <input type="submit" class="btn btn-green" value="Agregar">
+    </div>
+
+</form>
+{% include 'footer.html' %}

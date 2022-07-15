@@ -1,0 +1,75 @@
+{% include 'header.html' %}
+{% for tecnicos in info_tecnicos %}
+
+<br>
+<form method="post" action="/update" enctype="multipart/form-data">
+    <div class="card">
+            <h1>EDITAR DATOS</h1>
+        <label for="txtCuadrilla">Cuadrilla:</label>
+        <input type="text" id="txtCuadrilla" value="{{tecnicos[1]}}" name="txtCuadrilla" placeholder="Cuadrilla">
+
+        <label for="txtFoto">Fotografia:</label>
+        <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=tecnicos[2])}}" alt="">
+        <input type="file" id="txtFoto" name="txtFoto">
+        <br>
+        <br>
+        <label for="txtNombre">Nombre:</label>
+        <input type="text" id="txtNombre" value="{{tecnicos[3]}}" name="txtNombre" placeholder="Nombre">
+
+        <label for="txtNumeroE">Numero de empleado:</label>
+        <input type="text" id="txtNumeroE" value="{{tecnicos[4]}}" name="txtNumeroE" placeholder="Numero de empleado">
+
+        <label for="txtNumeroC">Numero de Celurar:</label>
+        <input type="text" id="txtNumeroC" value="{{tecnicos[5]}}" name="txtNumeroC" placeholder="Numero de celular">
+
+        <label for="txtUnidad">Unidad:</label>
+        <input type="text" id="txtUnidad" value="{{tecnicos[6]}}" name="txtUnidad" placeholder="Unidad">
+
+        <label for="txtSupervisor">Supervisor:</label>
+        <input type="text" id="txtSupervisor" value="{{tecnicos[7]}}" name="txtSupervisor" placeholder="Supervisor">
+
+        <label for="txtNumeroD">Numero DIMME:</label>
+        <input type="text" id="txtNumeroD" value="{{tecnicos[8]}}" name="txtNumeroD" placeholder="Numero DIMME">
+
+        <label for="txtCurp">CURP:</label>
+        <input type="text" id="txtCurp" value="{{tecnicos[9]}}" name="txtCurp" placeholder="CURP">
+
+        <label for="txtRfc">RFC:</label>
+        <input type="text" id="txtRfc" value="{{tecnicos[10]}}" name="txtRfc" placeholder="RFC">
+
+        <label for="txtSucursal">Sucursal:</label>
+        <input type="text" id="txtSucursal" value="{{tecnicos[11]}}" name="txtSucursal" placeholder="Sucursal">
+
+        <label for="txtDireccion">Dirección:</label>
+        <input type="text" id="txtDireccion" value="{{tecnicos[12]}}" name="txtDireccion" placeholder="Dirección">
+
+        <label for="txtCorreoE">Correo Electronico:</label>
+        <input type="text" id="txtCorreoE" value="{{tecnicos[13]}}" name="txtCorreoE" placeholder="Correo Electronico">
+
+        <label for="txtEstadoC">Estado Civil:</label>
+        <input type="text" id="txtEstadoC" value="{{tecnicos[14]}}" name="txtEstadoC" placeholder="Estado Civil">
+
+        <label for="txtNombreE">Nombre de Emergencia:</label>
+        <input type="text" id="txtNombreE" value="{{tecnicos[15]}}" name="txtNombreE" placeholder="Nombre de Emergencia">
+
+        <label for="txtNumeroEm">Numero de Emergencia:</label>
+        <input type="text" id="txtNumeroEm" value="{{tecnicos[16]}}" name="txtNumeroEm" placeholder="Numero de emergencia">
+
+        <label for="txtNumeroL">Numero de licencia:</label>
+        <input type="text" id="txtNumeroL" value="{{tecnicos[17]}}" name="txtNumeroL" placeholder="Numero de licencia">
+
+        <label for="txtVigencia">Vigencia:</label>
+        <input type="text" id="txtVigencia" value="{{tecnicos[18]}}" name="txtVigencia" placeholder="Vigencia">
+
+        <input type="hidden" value="{{tecnicos[0]}}" name="txtID" id="txtID">
+
+        <div class="padre">
+            <input type="submit" class="btn btn-green" value="Actualizar">
+            <a href="{{url_for('index')}}"><input type="submit" class="btn btn-blue" value="Regresar"></a>
+        </div>
+    </div>
+
+</form>
+
+{% endfor %}
+{% include 'footer.html' %}

@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+{% for vehiculos in info_vehiculos %}
+  
+<form method="post" action="/updateiv" enctype="multipart/form-data">
+    <div class="card">
+            <h1>EDITAR DATOS</h1>
+        <label for="txtUnidadV">Unidad:</label>
+        <input id="txtUnidadV" value="{{vehiculos[1]}}" class="form-control" type="text" name="txtUnidadV">
+        
+        <label for="txtAño">Año:</label>
+        <input id="txtAño"  value="{{vehiculos[2]}}" class="form-control" type="text" name="txtAño">
+        
+        <label for="txtCuadrillaV">Cuadrilla:</label>
+        <input id="txtCuadrillaV" value="{{vehiculos[3]}}" class="form-control" type="text" name="txtCuadrillaV">
+        
+        <label for="txtNumeroEc">Numero Economico:</label>
+        <input id="txtNumeroEc" value="{{vehiculos[4]}}" class="form-control" type="text" name="txtNumeroEc">
+        
+        <label for="txtNumeroS">Numero de Serie:</label>
+        <input id="txtNumeroS" value="{{vehiculos[5]}}" class="form-control" type="text" name="txtNumeroS">
+        
+        <label for="txtTarjeta">Tarjeta:</label>
+        <input id="txtTarjeta" value="{{vehiculos[6]}}" class="form-control" type="text" name="txtTarjeta">
+        
+        <label for="txtNip">NIP:</label>
+        <input id="txtNip" value="{{vehiculos[7]}}" class="form-control" type="text" name="txtNip">
+        
+        <label for="txtTipo">Tipo:</label>
+        <input id="txtTipo" value="{{vehiculos[8]}}" class="form-control" type="text" name="txtTipo">
+        
+        <input type="hidden" value="{{vehiculos[0]}}" name="txtIDv" id="txtIDv">
+        
+        <br/>
+        <div class="padre">
+            <input type="submit" class="btn btn-green" value="Actualizar">
+            <a href="{{url_for('indexit')}}"><input type="submit" class="btn btn-blue" value="Regresar"></a>
+        </div>
+    </div>
+</form>
+
+{% endfor %}
+{% include 'footer.html' %}

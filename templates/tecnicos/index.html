@@ -1,0 +1,54 @@
+{% include 'header.html' %}
+
+<br/>
+<a class="fcc-btn" href="{{url_for('create')}}">
+
+  Ingresar datos
+
+</a>
+<a class="fcc-btn2" href="{{url_for('download_report')}}">
+
+   Generar Reporte
+
+</a>
+<br>
+<br>  
+  <div style="overflow-x:auto;">
+
+    <table align="center">
+      <tr id="empleados">
+        <th>ID</th>
+        <th>Fotografia</th>
+        <th>Nombre</th>
+        <th>Numero Empleado</th>
+        <th>Unidad</th>
+        <th>Numero DIMME</th>
+        <th>Nombre Emergencia</th>
+        <th>Numero Emergencia</th>
+        <th>Vigencia</th>
+        <th>Acciones</th>
+      </tr>
+      {% for tecnicos in info_tecnicos %}
+      <tr>
+        <td>{{tecnicos[0]}}</td>
+        <td>
+          <img class="img-thumbnail" width="60" src="uploads/{{tecnicos[2]}}" alt="">
+        </td>
+        <td>{{tecnicos[3]}}</td>
+        <td>{{tecnicos[4]}}</td>
+        <td>{{tecnicos[6]}}</td>
+        <td>{{tecnicos[8]}}</td>
+        <td>{{tecnicos[15]}}</td>
+        <td>{{tecnicos[16]}}</td>
+        <td>{{tecnicos[18]}}</td>
+        <td>
+          <button style="font-size:24px;background-color:rgb(116, 184, 211);" ><a href="/edit/{{tecnicos[0]}}" class="fa fa-pencil-square-o"></a></button>
+          <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a href="/destroy/{{tecnicos[0]}}" class="fa fa-trash"></a> </button>
+          <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a href="/datos/{{tecnicos[0]}}" class="fa fa-eye"></a></button>
+        </td>
+        {% endfor %}
+      </tr>
+  </table>
+
+
+    {% include 'footer.html' %}

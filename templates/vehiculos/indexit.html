@@ -1,0 +1,48 @@
+{% include 'header.html' %}
+
+<br />
+<a class="fcc-btn" href="{{url_for('createiv')}}">
+
+    Ingresar datos
+
+<a class="fcc-btn2" href="{{url_for('download_reportv')}}">
+
+    Generar Reporte
+     
+</a>
+<br>
+<br>
+<div style="overflow-x:auto;">
+    <table align="center">
+        <tr id="empleados">
+            <th>ID</th>
+            <th>Unidad</th>
+            <th>Año</th>
+            <th>Cuadrilla</th>
+            <th>Numero Econ.</th>
+            <th>Numero Serie</th>
+            <th>Tarjeta</th>
+            <th>NIP</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+        {% for vehiculos in info_vehiculos %}
+        <tr>
+            <td>{{vehiculos[0]}}</td>
+            <td>{{vehiculos[1]}}</td>
+            <td>{{vehiculos[2]}}</td>
+            <td>{{vehiculos[3]}}</td>
+            <td>{{vehiculos[4]}}</td>
+            <td>{{vehiculos[5]}}</td>
+            <td>{{vehiculos[6]}}</td>
+            <td>{{vehiculos[7]}}</td>
+            <td>{{vehiculos[8]}}</td>
+            <td>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);" ><a href="/editiv/{{vehiculos[0]}}" class="fa fa-pencil-square-o"></a></button>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a href="/destroyiv/{{vehiculos[0]}}" class="fa fa-trash"></a> </button>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a href="/datosv/{{vehiculos[0]}}" class="fa fa-eye"></a></button> 
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+    {% include 'footer.html' %}

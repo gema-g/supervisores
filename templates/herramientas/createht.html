@@ -1,0 +1,72 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %} 
+
+{% if messages %}
+<div class="error">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endwith %}  
+
+<br>
+<form method="post" action="/storeht" enctype="multipart/form-data">
+
+    <div class="card">
+            <h1> DATOS </h1>
+            <h2>DE HERRAMIENTAS</h2>
+        <label for="txtHerramienta">Herramienta:</label>
+        <input id="txtHerramienta" class="form-control" type="text" name="txtHerramienta">
+        
+        <label for="txtNumeroEH">Numero de Empleado:</label>
+        <input id="txtNumeroEH" class="form-control" type="text" name="txtNumeroEH">
+        
+        <label for="txtEnero">Enero:</label>
+        <input id="txtEnero" class="form-control" type="text" name="txtEnero">
+        
+        <label for="txtFebrero">Febrero:</label>
+        <input id="txtFebrero" class="form-control" type="text" name="txtFebrero">
+        
+        <label for="txtMarzo">Marzo:</label>
+        <input id="txtMarzo" class="form-control" type="text" name="txtMarzo">
+        
+        <label for="txtAbril">Abril:</label>
+        <input id="txtAbril" class="form-control" type="text" name="txtAbril">
+
+        <label for="txtMayo">Mayo:</label>
+        <input id="txtMayo" class="form-control" type="text" name="txtMayo">
+        
+        <label for="txtJunio">Junio:</label>
+        <input id="txtJunio" class="form-control" type="text" name="txtJunio">
+        
+        <label for="txtJulio">Julio:</label>
+        <input id="txtJulio" class="form-control" type="text" name="txtJulio">
+        
+        <label for="txtAgosto">Agosto:</label>
+        <input id="txtAgosto" class="form-control" type="text" name="txtAgosto">
+        
+        <label for="txtSeptiembre">Septiembre:</label>
+        <input id="txtSeptiembre" class="form-control" type="text" name="txtSeptiembre">
+        
+        <label for="txtOctubre">Octubre:</label>
+        <input id="txtOctubre" class="form-control" type="text" name="txtOctubre">
+        
+        <label for="txtNoviembre">Noviembre:</label>
+        <input id="txtNoviembre" class="form-control" type="text" name="txtNoviembre">
+        
+        <label for="txtDiciembre">Diciembre:</label>
+        <input id="txtDiciembre" class="form-control" type="text" name="txtDiciembre">
+
+        
+        <input type="submit" class="btn btn-green" value="Agregar">
+        <!--<a href="{{url_for('indexht')}}" class="btn btn-primary">Regresar</a> -->
+
+    </div>
+    
+    
+
+</form>
+{% include 'footer.html' %}

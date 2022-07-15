@@ -1,0 +1,62 @@
+{% include 'header.html' %}
+{% for herramientas in herramientas_tecnicos %}
+  
+<br>
+<form method="post" action="/updateht" enctype="multipart/form-data">
+    <div class="card">
+            <h1>EDITAR DATOS</h1>
+        
+        <label for="txtHerramienta">Herramienta:</label>
+        <input id="txtHerramienta" value="{{herramientas[1]}}" class="form-control" type="text" name="txtHerramienta">
+        
+        <label for="txtNumeroEH">Numero de Empleado:</label>
+        <input id="txtNumeroEH" value="{{herramientas[2]}}" class="form-control" type="text" name="txtNumeroEH">
+        
+        <label for="txtEnero">Enero:</label>
+        <input id="txtEnero" value="{{herramientas[3]}}" class="form-control" type="text" name="txtEnero">
+        
+        <label for="txtFebrero">Febrero:</label>
+        <input id="txtFebrero" value="{{herramientas[4]}}" class="form-control" type="text" name="txtFebrero">
+        
+        <label for="txtMarzo">Marzo:</label>
+        <input id="txtMarzo" value="{{herramientas[5]}}" class="form-control" type="text" name="txtMarzo">
+        
+        <label for="txtAbril">Abril:</label>
+        <input id="txtAbril" value="{{herramientas[6]}}" class="form-control" type="text" name="txtAbril">
+        
+        <label for="txtMayo">Mayo:</label>
+        <input id="txtMayo" value="{{herramientas[7]}}" class="form-control" type="text" name="txtMayo">
+        
+        <label for="txtJunio">Junio:</label>
+        <input id="txtJunio" value="{{herramientas[8]}}" class="form-control" type="text" name="txtJunio">
+
+        <label for="txtJulio">Julio:</label>
+        <input id="txtJulio" value="{{herramientas[9]}}" class="form-control" type="text" name="txtJulio">
+        
+        <label for="txtAgosto">Agosto:</label>
+        <input id="txtAgosto" value="{{herramientas[10]}}" class="form-control" type="text" name="txtAgosto">
+        
+        <label for="txtSeptiembre">Septiembre:</label>
+        <input id="txtSeptiembre" value="{{herramientas[11]}}" class="form-control" type="text" name="txtSeptiembre">
+        
+        <label for="txtOctubre">Octubre:</label>
+        <input id="txtOctubre" value="{{herramientas[12]}}" class="form-control" type="text" name="txtOctubre">
+        
+        <label for="txtNoviembre">Noviembre:</label>
+        <input id="txtNoviembre" value="{{herramientas[13]}}" class="form-control" type="text" name="txtNoviembre">
+        
+        <label for="txtDiciembre">Diciembre:</label>
+        <input id="txtDiciembre" value="{{herramientas[14]}}" class="form-control" type="text" name="txtDiciembre">
+        
+        <input type="hidden" value="{{herramientas[0]}}" name="txtIDht" id="txtIDht">
+
+        <div class="padre">
+            <input type="submit" class="btn btn-green" value="Actualizar">
+            <a href="{{url_for('indexht')}}"><input type="submit" class="btn btn-blue" value="Regresar"></a>
+        </div>
+    </div>
+
+</form>
+
+{% endfor %}
+{% include 'footer.html' %}

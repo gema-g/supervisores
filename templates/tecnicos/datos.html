@@ -1,0 +1,75 @@
+{% include 'header.html' %}
+{% for tecnicos in info_tecnicos %} 
+
+
+    <div class="card">
+            <h1> DATOS </h1>
+            <h2>DEL EMPLEADO</h2>
+                    
+        <label for="txtFoto">Fotografia:</label>
+        <br>
+        <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=tecnicos[2])}}" alt=""> 
+        <br>
+        <br>
+        
+        <label for="txtNombre">Nombre:</label>
+        <input id="txtNombre" value="{{tecnicos[3]}}" class="form-control" type="text" name="txtNombre" disabled> 
+        
+        <label for="txtCuadrilla">Cuadrilla:</label>
+        <input id="txtCuadrilla" value="{{tecnicos[1]}}" class="form-control" type="text" name="txtCuadrilla" disabled> 
+        
+        <label for="txtNumeroE">Numero de empleado:</label>
+        <input id="txtNumeroE" value="{{tecnicos[4]}}" class="form-control" type="text" name="txtNumeroE" disabled>
+        
+        <label for="txtNumeroC">Numero de Celurar:</label>
+        <input id="txtNumeroC" value="{{tecnicos[5]}}" class="form-control" type="text" name="txtNumeroC" disabled>
+        
+        <label for="txtUnidad">Unidad:</label>
+        <input id="txtUnidad" value="{{tecnicos[6]}}" class="form-control" type="text" name="txtUnidad" disabled>
+        
+        <label for="txtSupervisor">Supervisor:</label>
+        <input id="txtSupervisor" value="{{tecnicos[7]}}" class="form-control" type="text" name="txtSupervisor" disabled>
+        
+        <label for="txtNumeroD">Numero DIMME:</label>
+         <input id="txtNumeroD" value="{{tecnicos[8]}}" class="form-control" type="text" name="txtNumeroD" disabled>
+         
+         <label for="txtCurp">CURP:</label>
+         <input id="txtCurp" value="{{tecnicos[9]}}" class="form-control" type="text" name="txtCurp" disabled> 
+         
+         <label for="txtRfc">RFC:</label>
+         <input id="txtRfc" value="{{tecnicos[10]}}" class="form-control" type="text" name="txtRfc" disabled>
+         
+         <label for="txtSucursal">Sucursal:</label>
+         <input id="txtSucursal" value="{{tecnicos[11]}}" class="form-control" type="text" name="txtSucursal" disabled>
+         
+         <label for="txtDireccion">Dirección:</label>
+         <input id="txtDireccion" value="{{tecnicos[12]}}" class="form-control" type="text" name="txtDireccion" disabled>
+         
+         <label for="txtCorreoE">Correo Electronico:</label>
+         <input id="txtCorreoE" value="{{tecnicos[13]}}" class="form-control" type="text" name="txtCorreoE" disabled>
+         
+         <label for="txtEstadoC">Estado Civil:</label>
+         <input id="txtEstadoC" value="{{tecnicos[14]}}" class="form-control" type="text" name="txtEstadoC" disabled>
+         
+         <label for="txtNombreE">Nombre de Emergencia:</label>
+         <input id="txtNombreE" value="{{tecnicos[15]}}" class="form-control" type="text" name="txtNombreE" disabled>
+         
+         <label for="txtNumeroEm">Numero de Emergencia:</label>
+         <input id="txtNumeroEm" value="{{tecnicos[16]}}" class="form-control" type="text" name="txtNumeroEm" disabled>
+         
+         <label for="txtNumeroL">Numero de licencia:</label>
+         <input id="txtNumeroL" value="{{tecnicos[17]}}" class="form-control" type="text" name="txtNumeroL" disabled>
+         
+         <label for="txtVigencia">Vigencia:</label>
+         <input id="txtVigencia" value="{{tecnicos[18]}}" class="form-control" type="text" name="txtVigencia" disabled>
+         
+         <input type="hidden" value="{{tecnicos[0]}}" name="txtID" id="txtID">
+         
+
+         <div class="padre">
+         <a href="{{url_for('index')}}"><input type="submit" class="btn btn-blue" value="Regresar"></a>
+         <a href="{{url_for('downloadd_reportt',id=tecnicos[0])}}"><input type="submit" class="btn btn-green" value="Reporte"></a> 
+         </div>
+    </div>
+{% endfor %}
+{% include 'footer.html' %}

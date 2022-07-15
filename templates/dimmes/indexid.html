@@ -1,0 +1,50 @@
+{% include 'header.html' %}
+
+<br/>
+<a href="{{url_for('createid')}}" class="fcc-btn">
+
+    Ingresar datos
+    
+<a class="fcc-btn2" href="{{url_for('download_reportd')}}">
+
+    Generar Reporte
+
+</a>
+<br>
+<br>
+<div style="overflow-x:auto;">
+    <table align="center">
+        <tr id="empleados">
+            <!-- -->
+            <th>ID</th>
+            <th>Cuadrilla</th>
+            <th>Etiqueta</th>
+            <th>Numero</th>
+            <th>Imei 1</th>
+            <th>Modelo</th>
+            <th>Serie</th>
+            <th>Imei SIM</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+            </tr>
+            {% for dimmes in info_dimmes %}
+            <tr>
+            <td>{{dimmes[0]}}</td>
+            <td>{{dimmes[1]}}</td>
+            <td>{{dimmes[2]}}</td>
+            <td>{{dimmes[3]}}</td>
+            <td>{{dimmes[4]}}</td>
+            <td>{{dimmes[6]}}</td>
+            <td>{{dimmes[7]}}</td>
+            <td>{{dimmes[9]}}</td>
+            <td>{{dimmes[10]}}</td>
+            <td>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);" ><a href="/editid/{{dimmes[0]}}" class="fa fa-pencil-square-o"></a></button>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a href="/destroyid/{{dimmes[0]}}" class="fa fa-trash"></a> </button>
+                <button style="font-size:24px;background-color:rgb(116, 184, 211);"><a href="/datosd/{{dimmes[0]}}" class="fa fa-eye"></a></button>  
+            </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% include 'footer.html' %}

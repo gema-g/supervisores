@@ -1,0 +1,49 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %} 
+
+{% if messages %}
+    <div class="error">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+    </div>
+{% endif %}
+
+{% endwith %}
+
+<form method="post" action="/storeiv" enctype="multipart/form-data">
+    <div class="card">
+            <h1> DATOS </h1>
+            <h2>DATOS DEL VEHICULO</h2>
+        
+        <label for="txtUnidadV">Unidad:</label>
+        <input id="txtUnidadV" class="form-control" type="text" name="txtUnidadV">
+        
+        <label for="txtAño">Año:</label>
+        <input id="txtAño" class="form-control" type="text" name="txtAño">
+        
+        <label for="txtCuadrillaV">Cuadrilla:</label>
+        <input id="txtCuadrillaV" class="form-control" type="text" name="txtCuadrillaV">
+        
+        <label for="txtNumeroEc">Numero Economico:</label>
+        <input id="txtNumeroEc" class="form-control" type="text" name="txtNumeroEc">
+        
+        <label for="txtNumeroS">Numero de Serie:</label>
+        <input id="txtNumeroS" class="form-control" type="text" name="txtNumeroS">
+        
+        <label for="txtTarjeta">Tarjeta:</label>
+        <input id="txtTarjeta" class="form-control" type="text" name="txtTarjeta">
+        
+        <label for="txtNip">Nip:</label>
+        <input id="txtNip" class="form-control" type="text" name="txtNip">
+        
+        <label for="txtTipo">Tipo:</label>
+        <input id="txtTipo" class="form-control" type="text" name="txtTipo">
+        
+        <input type="submit" class="btn btn-green" value="Agregar">
+       
+    </div>
+    
+</form>
+{% include 'footer.html' %}
