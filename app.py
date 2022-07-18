@@ -265,35 +265,35 @@ def download_report():
 
           th =pdf.font_size*6
           t=1
-          pdf.cell(col_width-25,th,"N°", border=1, ln=0, align= 'C')
-          pdf.cell(col_width,th,"FOTOGRAFIA", border=1, ln=0, align= 'C')
-          pdf.cell(col_width+45,th,"NOMBRE", border=1, ln=0, align= 'C')
-          pdf.cell(col_width-10,th,"N° EMPLEADO", border=1, ln=0, align= 'C')
-          pdf.cell(col_width-10,th,"UNIDAD", border=1, ln=0, align= 'C')
-          pdf.cell(col_width-10,th,"N° DIMME", border=1, ln=0, align= 'C')
-          pdf.cell(col_width+30,th,"NOMBRE DE EMERGENCIA", border=1, ln=0, align= 'C')
-          pdf.cell(col_width-10,th,"N° EMERG.", border=1, ln=0, align= 'C')
-          pdf.cell(col_width-10,th,"VIGENCIA", border=1, ln=0, align= 'C')
-          pdf.ln(th)
+          pdf.cell(col_width-25,10,"N°", border=1, ln=0, align= 'C')
+          pdf.cell(col_width,10,"FOTOGRAFIA", border=1, ln=0, align= 'C')
+          pdf.cell(col_width+45,10,"NOMBRE", border=1, ln=0, align= 'C')
+          pdf.cell(col_width-10,10,"N° EMPLEADO", border=1, ln=0, align= 'C')
+          pdf.cell(col_width-10,10,"UNIDAD", border=1, ln=0, align= 'C')
+          pdf.cell(col_width-10,10,"N° DIMME", border=1, ln=0, align= 'C')
+          pdf.cell(col_width+30,10,"NOMBRE DE EMERGENCIA", border=1, ln=0, align= 'C')
+          pdf.cell(col_width-10,10,"N° EMERG.", border=1, ln=0, align= 'C')
+          pdf.cell(col_width-10,10,"VIGENCIA", border=1, ln=0, align= 'C')
+          pdf.ln(10)
           i=th
           y=0
           #s=th
           for row in result:
               pdf.set_font('Courier','',12)
-              pdf.cell(col_width-25, th, str(t), border=1, align= 'L')
+              pdf.cell(col_width-25,35, str(t), border=1, align= 'L')
               #pdf.cell(col_width-25,th,str(row['id']),border=1, ln=0, align='L')
               absolutepath = os.path.abspath(__file__)
               fileDirectory = os.path.dirname(absolutepath)
               newPath = os.path.join(fileDirectory, 'uploads',row['fotografia'])   
-              pdf.cell(col_width, th, "",border=1, ln=0, align= 'L')
-              pdf.image(newPath,x=col_width-10,y=48+i,w=30,h=32)
-              pdf.cell(col_width+45, th, str(row['nombre']), border=1, ln=0, align= 'L')
-              pdf.cell(col_width-10, th, str(row['num_empleado']), border=1, ln=0, align= 'L')
-              pdf.cell(col_width-10, th, str(row['unidad']), border=1, ln=0, align= 'L')
-              pdf.cell(col_width-10, th, str(row['num_dimme']), border=1, ln=0, align= 'L')
-              pdf.cell(col_width+30, th, str(row['nom_emergencia']), border=1, ln=0, align= 'L')
-              pdf.cell(col_width-10, th, str(row['num_emergencia']), border=1, ln=0, align= 'L')
-              pdf.cell(col_width-10, th, str(row['vigencia']), border=1, ln=1, align= 'L')
+              pdf.cell(col_width, 35, "",border=1, ln=0, align= 'L')
+              pdf.image(newPath,x=col_width-10,y=38+i,w=30,h=32)
+              pdf.cell(col_width+45, 35, str(row['nombre']), border=1, ln=0, align= 'L')
+              pdf.cell(col_width-10, 35, str(row['num_empleado']), border=1, ln=0, align= 'L')
+              pdf.cell(col_width-10, 35, str(row['unidad']), border=1, ln=0, align= 'L')
+              pdf.cell(col_width-10, 35, str(row['num_dimme']), border=1, ln=0, align= 'L')
+              pdf.cell(col_width+30, 35, str(row['nom_emergencia']), border=1, ln=0, align= 'L')
+              pdf.cell(col_width-10, 35, str(row['num_emergencia']), border=1, ln=0, align= 'L')
+              pdf.cell(col_width-10, 35, str(row['vigencia']), border=1, ln=1, align= 'L')
               
               textid = str(row['id'])
               textfoto = '                  '
@@ -304,14 +304,13 @@ def download_report():
               textnomeme=str(row['nom_emergencia'])
               textnumeme=str(row['num_emergencia'])
               textvigencia=str(row['vigencia'])
-              i=i+26
-              if(i >= 190):
-                  i=th-68
+              i=i+35
+              if(i >= 206):
+                  i=th-53
                   pdf.add_page()
               t=t+1
               #s=s+25
               #pdf.ln(th)
-
           pdf.ln(10)
 
           pdf.set_font('Times','',10.0)
@@ -1118,7 +1117,7 @@ def updateht():
 #    return render_template('herramientas/datosh.html',herramientas_tecnicos=infoh)
 
 def obtener_conexion():
-    return pymysql.connect(host='localhost',user='root',password='',db='bdb1')
+    return pymysql.connect(host='localhost',user='supervisores',password='maral',db='bdb1')
 
 #imprimir PDF por registro
 @app.route('/downloadh/reporth/pdfhtas',methods=['GET','POST'])
