@@ -1193,7 +1193,7 @@ def downloaddd1_reportddd1():
     for row in resultados:
         pdf.set_font('Courier','',12)
         print(row)
-        pdf.cell(15,th, str(row[0]), border=1, align= 'L')
+        pdf.cell(15,th, str(i), border=1, align= 'L')
         pdf.cell(45,th, str(row[1]), border=1, align= 'L')
         pdf.cell(35,th, str(row[2]), border=1, align= 'L')
         pdf.cell(20,th, str(row[3]), border=1, align= 'C')
